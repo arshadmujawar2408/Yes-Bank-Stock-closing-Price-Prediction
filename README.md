@@ -12,27 +12,17 @@
 We are given a dataset. It contains the following features.
 ```
 - Date: It denotes date of investment done (in our case we have month and year).
-* **Open:** Open means the price at which a stock started trading when the opening bell rang.
-* **High:**  High refer to the maximum prices in a given time period.
-* **Low:**  Low refer to the minimum prices in a given time period.
-* **Close:** Close refers to the price of an individual stock when the stock exchange closed for the day.
+- Open: Open means the price at which a stock started trading when the opening bell rang.
+- High: High refer to the maximum prices in a given time period.
+- Low: Low refer to the minimum prices in a given time period.
+- Close: Close refers to the price of an individual stock when the stock exchange closed for the day.
 ```
 
-- Total number of rows in data: 119390
-- Total number of columns: 32
+- Total number of rows in data: 185
+- Total number of columns: 5
 
 ## Data Cleaning and Manipulation
-
-### (1) Handling null values
-Null values in columns `company` and `agent` were dropped.
-
-### (2) Removing Duplicate rows
-All duplicate rows were dropped.
-
-### (3) Identify Continuous and Categorical Variables
-The dataset consists of 12 continuous variables and 18 categorical variables. 
-
-### (3) Converting columns to appropriate naming conventionsdata types
+As you can see we have done 2 manipulations in the dataset and we found that we are good to go now as we changing date colunn datatype to datetime formats as well as we have created seperate columns for month and year from date column for better visualisation.
 
 ## Data Preparation
 #
@@ -44,59 +34,35 @@ The dataset consists of 12 continuous variables and 18 categorical variables.
 
 
 ## Exploratory Data Analysis
-
-Performed EDA and tried answering the following questions:
-
-```
- Q1) Which hotel has more no of bookings and What is the  percentage of bookings in each hotel ?
- Q2) Hotel Wise Bookings based on Month and year also What is the trend of bookings within a month ?
- Q3) Which meal type is the  most preffered meal of customers ?
- Q4) Which room type is in most demand and which room type generates the  highest average daily rate?
- Q5) How long do people stay at the hotels?
- Q6) What is preferred stay length in each hotel based on weekday nights and weekend nights ?
- Q7) Which Booking is preffered with the deposite type?
- Q8) Cancellation rates in both the hotels also arival year and  lead time?
- Q9) What is the Average daily rate month wise also which are the most busy months??
- Q10) What is the Average daily rate with respect to per person?
- Q11) Which types of customers mostly make bookings?
-```
-
 Mainly performed using Matplotlib and Seaborn library and the following graph and plots had been used:
    - Bar Plot.
-   - Count Plot
+   - KDE Plot.
    - Pie Chart.
-   - Line Plot.
-   - Heatmap.
-   - Box Plot
+   - Line Chart.
+   - Violin Plot.
+   - Box Plot.
+   - Hist Plot.
+   - Scatter Plot.
+   - Pair Plot.
+
+## ML Model Used:
+Several machine learning algorithms were utilized in this project. These models include:
+```
+1. Mulltiple Linear regression
+2. Lasso Regression
+3. Ridge Regression
+ ```
              
-## Analysis:
-
-Performed analysis and made following conclusions:
-```
-1} Cancellations: Approximately 27% of the bookings, amounting to 23,987 bookings, were canceled.
-2} Bookings by Country: The majority of bookings, around 31%, were made from Portugal, followed by Great Britain with 12% and France with 10%.
-3} Occupancy by Month: August is the busiest month with 12.91% of the bookings, while January is the least occupied month with only 5.33% of the bookings.
-4} Booking Channels: Around 59% of the bookings were made through Online Travel Agents (OTAs), approximately 15% through Offline Travel Agents, and less than 13% were direct bookings without involving any other agents.
-5} Bookings by Year: In terms of the distribution of bookings over the years, 48% were made in 2016, 36% in 2017, and 15% in 2015, indicating an increasing trend in bookings year by year.
-6} Meal Preferences: The most ordered meal option was Bed & Breakfast (BB), accounting for approximately 77.7% of the bookings. This was followed by bookings without any meal package specified (SC), Half Board (HB), Undefined, and Full Board (FB).
-7} Customer Type: The majority of customers, around 82%, belonged to the Transient customer type, indicating a higher proportion of individual and short-stay guests.
-8} Check-Out and Cancellation Rates: Approximately 72% of the visitors checked out as planned, while 26% of the bookings were canceled.
-```
 ## Conclusion
-
 ```
-1} Majority of the hotels booked are city hotel. Definitely need to spend the most targeting fund on those hotel.
-2} We also realise that the high rate of cancellations can be due high no deposit policies.
-3} We should also target months between May to Aug. Those are peak months due to the summer period.
-4} Majority of the guests are from Western Europe. We should spend a significant amount of our budget on those area.
-5} Given that we do not have repeated guests, we should target our advertisement on guests to increase returning guests.	
-6} Bed and Breakfast (BB) is the most preferred meal package, indicating the potential to introduce offers and promotions for other meal packages like Full Board (FB) to increase revenue.
-7) The distribution channel TA/TO (Travel Agents/Tour Operators) accounts for 80% of bookings, highlighting the importance of collaborating with these channels for marketing and promotions.
-And many more conclusions.
+1. At first we do the data wrangling then data cleaning and data transformation after that we do the Modeling part.
+2. The trend of the price of Yes Bank's stock increased until 2018 and then Close,Open,High,Low price decreased.
+3. Based on the open vs. close price graph, we concluded that Yes Bank's stock fell significantly after 2018.
+4. Visualization has allowed us to notice that the closing price of the stock has suddenly fallen starting in 2018. It seems reasonable that the Yes Bank stock price was significantly impacted by the Rana Kapoor case fraud.
+5. High, Low, Open are directly correlate with the Closing price of stocks.
+6. The target variable is highly dependent on input variables.
+7. Linear Regression has given the best results with lowest MAE, MSE, RMSE and MAPE scores.
+8. Ridge regression shrunk the parameters to reduce complexity and multicollinearity, but ended up affecting the evaluation metrics.
+9. Lasso regression did feature selection and ended up giving up worse results than ridge which again reflects the fact that each feature is important (as previously discussed).
+10. The accuracy for each model is more than 90%.
 ```
-## Challenges
-```
-(1) Lot of null values were present in the dataset.
-(2) Data type of some Data was in wrong format.
-(3) Lot of duplicate data.
-(4) Which visualization techniques to use was a challenge?
