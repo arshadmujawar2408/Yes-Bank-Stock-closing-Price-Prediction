@@ -26,8 +26,6 @@ We are given a dataset. It contains the following features.
 As you can see we have done 2 manipulations in the dataset and we found that we are good to go now as we changing date colunn datatype to datetime formats as well as we have created seperate columns for month and year from date column for better visualisation.
 
 ## Data Preparation
-#
-
  1) Combine the categories of children and babies into a single category called "kids."
  2) Calculate the total number of bookings by adding the counts of kids and adults.
  3) Convert the data types of the following columns to string: ArrivingYear, ArrivingMonth, ArrivingDate, Canceled, and RepeatGuest.
